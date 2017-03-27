@@ -1,6 +1,7 @@
 #include <iostream>
 #pragma once
 #include <string>
+
 using namespace std;
 
 class jugador{
@@ -12,16 +13,16 @@ class jugador{
 		int velocidad;
 	public:
 		jugador(string,int,string,string,int);
-		virtual void metergol(int)=0;
+		virtual bool metergol(int)=0;
 		virtual int calcularsuerte()=0;
 		virtual int adrenalina(int)=0;
-		virtual void defender(int)=0;
-		virtual string getnombre();
-		virtual int getedad();
-		virtual string getpiehabil();
-		virtual string getnacionalidad();
+		virtual bool defender(int)=0;
+		string getnombre();
+		int getedad();
+		string getpiehabil();
+		string getnacionalidad();
 		
-		virtual int getvelocidad();
+		int getvelocidad();
 
 
 

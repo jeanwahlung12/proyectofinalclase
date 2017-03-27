@@ -6,10 +6,10 @@ class portero : public jugador{
 		int golesrecibidos;
 	public:
 		portero(string,int,string,string,int,int);
-		virtual void metergol(int);
+		virtual bool metergol(int);
 		virtual int calcularsuerte();
 		virtual int adrenalina(int);
-		virtual void defender(int);
-		virtual void setgolesrecibidos(int);
-		virtual int getgolesrecibidos();		
+		virtual bool defender(int);
+		void setgolesrecibidos(int);
+		int getgolesrecibidos();		
 };

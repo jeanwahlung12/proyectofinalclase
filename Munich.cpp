@@ -1,8 +1,7 @@
 #include "Munich.h"
 
-Munich::Munich(string name,int poblation){
-	nombre=name;
-	poblacion=poblation;
+Munich::Munich(string name,int poblation):cuidades(name,poblation){
+	
 }
 Munich::Munich(){
 

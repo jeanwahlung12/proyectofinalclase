@@ -12,12 +12,12 @@ class cuidades{
 	public:
 		cuidades();
 		cuidades(string,int);
-		virtual void setnombre(string);
-		virtual void setpoblacion(int);
-		virtual void setestadios(Estadio*);
-		virtual string getnombre();
-		virtual int getpoblacion();
-		virtual Estadio* getestadio(int);
+		void setnombre(string);
+		void setpoblacion(int);
+		void setestadios(Estadio*);
+		string getnombre();
+		int getpoblacion();
+		Estadio* getestadio(int);
 
 
 };

@@ -1,13 +1,17 @@
 #include "defensa.h"
+
 #include <stdlib.h>
 #include <time.h>
 defensa:: defensa(string name,int age,string pie,string nacio,int vel) :jugador(name,age,pie,nacio,vel){
 
 }
 
-void defensa::metergol(int num,equipo* team){
+bool defensa::metergol(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() + 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
@@ -28,8 +32,11 @@ int defensa::adrenalina(int num){
 	}
 	return num;
 }
-void defensa::defender(int num){
+bool defensa::defender(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() - 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }

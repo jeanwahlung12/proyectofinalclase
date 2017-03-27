@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "cuidades.h"
 #include <string>
 #include <vector>
 #include "Estadio.h"

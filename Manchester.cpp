@@ -1,9 +1,8 @@
 #include "Manchester.h"
 
-Manchester::Manchester(string name,int poblation){
-	nombre=name;
-	poblacion=poblation;
+Manchester::Manchester(string name,int poblation):cuidades(name,poblation){
 }
+
 Manchester::Manchester(){
 
 }

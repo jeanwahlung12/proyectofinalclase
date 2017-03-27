@@ -1,8 +1,7 @@
 #include "Napoli.h"
 
-Napoli::Napoli(string name,int poblation){
-	nombre=name;
-	poblacion=poblation;
+Napoli::Napoli(string name,int poblation):cuidades(name,poblation){
+	
 }
 Napoli::Napoli(){
 

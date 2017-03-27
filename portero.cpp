@@ -6,9 +6,12 @@ golesrecibidos=goals;
 
 }
 
-void portero::metergol(int num,equipo* team){
+bool portero::metergol(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() + 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
@@ -23,13 +26,16 @@ int portero::adrenalina(int num){
 	srand(time(NULL));
 	adren = rand()%10;
 
-	if(adren%5=0){
+	if(adren%5==0){
 		num = rand()%100;
 	}
 	return num;
 }
-void portero::defender(int num){
+bool portero::defender(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() - 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }

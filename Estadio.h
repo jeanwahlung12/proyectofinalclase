@@ -10,10 +10,10 @@ class Estadio{
 	public:
 		Estadio(string,int,string);
 		Estadio();
-		virtual void setnombre(string);
-		virtual void setcapacidad(int);
-		virtual string settipograma(string);
-		virtual string getnombre();
-		virtual int getcapacidad();
-		virtual string gettipograma();
+		void setnombre(string);
+		void setcapacidad(int);
+		void settipograma(string);
+		string getnombre();
+		int getcapacidad();
+		string gettipograma();
 };

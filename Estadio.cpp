@@ -26,8 +26,8 @@ string Estadio::getnombre(){
 	return nombre;
 }
 
-int Estadio::getcapacity(){
-	return capacity;
+int Estadio::getcapacidad(){
+	return capacidad;
 }
 
 string Estadio::gettipograma(){

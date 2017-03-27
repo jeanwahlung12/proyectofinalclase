@@ -3,13 +3,13 @@
 
 class delantero : public jugador{
 	protected:
-		int golesanotadps;
+		int golesanotados;
 	public:
 		delantero(string,int,string,string,int,int);
-		virtual void metergol(int);
+		virtual bool metergol(int);
 		virtual int calcularsuerte();
 		virtual int adrenalina(int);
-		virtual void defender(int);
-		virtual void setgolesanotados(anotados);
+		virtual bool defender(int);
+		virtual void setgolesanotados(int);
 		virtual int getgolesanotados();		
 };

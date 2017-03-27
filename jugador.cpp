@@ -1,5 +1,6 @@
 #include "jugador.h"
 
+
 jugador::jugador(string name,int age,string pie,string nacio,int vel){
 	nombre=name;
 	edad=age;

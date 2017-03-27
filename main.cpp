@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include <ncurses.h>
 #include "jugador.h"
 #include "defensa.h"
@@ -18,7 +18,7 @@
 #include "Juventus.h"
 #include "Munich.h"
 #include "Torneo.h"
-#include "Champios.h"
+#include "Champions.h"
 #include "EuropaLeague.h"
 #include "Dormund.h"
 #include "SantiagoBernabeu.h"
@@ -27,7 +27,7 @@
 #include "AllianzArena.h"
 #include "SignalidunaPark.h"
 #include "SanPaolo.h"
-#include "JuventusStadiom.h"
+#include "JuventusStadium.h"
 #include "RealMadridFC.h"
 #include "ManU.h"
 #include "Bayern.h"
@@ -36,7 +36,7 @@
 #include "JuventusFC.h"
 #include "NapoliFC.h"
 using namespace std;
-
+// declaracion del metodo
 int run();
 
 int main(){
@@ -44,6 +44,8 @@ int main(){
 	return 0;
 }
 
-int run(){
-
-}
+int run(){//Metodo Run
+	string nombre;
+	cin >> nombre;
+	cout << nombre;
+}//Fin Del Metodo Run

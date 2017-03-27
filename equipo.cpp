@@ -1,7 +1,7 @@
 #include "equipo.h"
 
 equipo::equipo(int gol){
-	goles=gol
+	goles=gol;
 }
 
 void equipo::setjugador(jugador* player){

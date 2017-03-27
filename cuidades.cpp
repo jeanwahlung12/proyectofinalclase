@@ -11,7 +11,7 @@ cuidades::cuidades(){
 void cuidades::setnombre(string name){
 	nombre=name;
 }
-void cuidades::setpoblacio(int num){
+void cuidades::setpoblacion(int num){
 	poblacion=num;
 }
 void cuidades::setestadios(Estadio* stadium){

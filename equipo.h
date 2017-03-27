@@ -10,8 +10,8 @@ class equipo{
 		vector <jugador*> jugadores;
 	public:
 		equipo(int);
-		virtual void setjugador(jugador*);
-		virtual void setgoles(int);
-		virtual int getgoles();
-		virtual jugador* getjugador(int);
+		 void setjugador(jugador*);
+		 void setgoles(int);
+		 int getgoles();
+		 jugador* getjugador(int);
 };

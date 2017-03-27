@@ -2,13 +2,16 @@
 #include <stdlib.h>
 #include <time.h>
 delantero:: delantero(string name,int age,string pie,string nacio,int vel,int goals) :jugador(name,age,pie,nacio,vel){
-golesanotados=goals;	
+	golesanotados=goals;	
 
 }
 
-void delantero::metergol(int num,equipo* team){
+bool delantero::metergol(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() + 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
@@ -23,13 +26,24 @@ int delantero::adrenalina(int num){
 	srand(time(NULL));
 	adren = rand()%10;
 
-	if(adren%2=0){
+	if(adren%2==0){
 		num = rand()%7;
 	}
 	return num;
 }
-void delantero::defender(int num){
+bool delantero::defender(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() - 1);
+		return true;
 	}
+	else{
+		return false;
+	}
+}
+
+void delantero::setgolesanotados(int anotados){
+	golesanotados=anotados;
+}
+	
+int delantero::getgolesanotados(){
+
 }

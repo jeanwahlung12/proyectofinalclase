@@ -5,9 +5,12 @@ mediocampista:: mediocampista(string name,int age,string pie,string nacio,int ve
 
 }
 
-void mediocampista::metergol(int num,equipo* team){
+bool mediocampista::metergol(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() + 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
@@ -28,8 +31,11 @@ int mediocampista::adrenalina(int num){
 	}
 	return num;
 }
-void mediocampista::defender(int num){
+bool mediocampista::defender(int num){
 	if(num==7){
-		team->setgoles(team->getgoles() - 1);
+		return true;
+	}
+	else{
+		return false;
 	}
 }

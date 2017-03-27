@@ -8,11 +8,11 @@ class Torneo{
 	public:
 		Torneo();
 		Torneo(string,int);
-		virtual void setnombre(string);
-		virtual void setpremio();
-		virtual void setequipos();
-		virtual string getnombre();
-		virtual int getpremio();
-		virtual equipo* getequipo(int);
+		void setnombre(string);
+		void setpremio(int);
+		void setequipos(equipo*);
+		string getnombre();
+		int getpremio();
+		equipo* getequipo(int);
 
 };
