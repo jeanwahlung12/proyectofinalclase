@@ -40,11 +40,12 @@ using namespace std;
 int run();
 
 int main(){
-	run();
+	//run();
+	cout << "HOLAS!";
 	return 0;
 }
 
-int run(){//Metodo Run
+/*int run(){//Metodo Run
 	vector <equipo*> teams;
 	vector <cuidades*> city;
 	int opc,opcequipo,cantjugadores, opcpos, edad, velocidad, opcciud, poblacion, num_estadios, opcest, capac;
