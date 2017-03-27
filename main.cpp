@@ -46,13 +46,16 @@ int main(){
 
 int run(){//Metodo Run
 	vector <equipo*> teams;
-	int opc,opcequipo,cantjugadores, opcpos, edad, velocidad;
-	string nombre, nombrej, piehabil, nacionalidad;
+	vector <cuidades*> city;
+	int opc,opcequipo,cantjugadores, opcpos, edad, velocidad, opcciud, poblacion, num_estadios, opcest, capac;
+	string nombre, nombrej, piehabil, nacionalidad, grama, name_stadium;
 	cin >> nombre;
 	cout << nombre;
 	cout << "----SIMULACIÓN DE PARTIDOS----\n\n";
-	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion ";
+	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Salir ";
 	cin >> opc;
+
+	while (opc!=4){
 
 	switch (opc){
 		case 1:{
@@ -392,8 +395,388 @@ int run(){//Metodo Run
 			}else{
 				cout << "Numero incorrecto";
 			}
+			
 		}//fin case 1
+		break;
+		case 2:{
+			cout << "----AGREGAR CIUDADES----" << endl;
+			cout << "Que ciudad desea agregar? \n1.Barcelona\n2.Chelsea\n3.Dormund\n4.Juventus\n5.Madrid\n6.Manchester\n7.Munich: ";
+			cin >> opcciud;
+			cout << "Poblacion de la ciudad: ";
+			cin >> poblacion;
+			cout << "Cuantos estadios desea agregar a la ciudad?: ";
+			cin >> num_estadios;
 
+
+			if (opcciud==1){
+				cuidades* barc = new Barcelona("Barcelona",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						barc->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						barc->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						barc->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						barc->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						barc->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						barc->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						barc->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						barc->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}
+					city.push_back(barc);
+
+				}
+			}else if (opcciud==2){
+				cuidades* cchels = new ChelseaCD("Chelsea",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						cchels->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						cchels->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						cchels->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						cchels->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						cchels->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						cchels->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						cchels->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						cchels->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(cchels);
+			
+			}else if(opcciud==3){
+				cuidades* dorm = new Dormund("Dormund",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						dorm->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						dorm->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						dorm->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						dorm->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						dorm->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						dorm->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						dorm->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						dorm->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(dorm);
+			
+
+			}else if(opcciud==4){
+				cuidades* juvct = new Juventus("Juventus",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						juvct->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						juvct->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						juvct->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						juvct->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						juvct->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						juvct->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						juvct->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						juvct->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(juvct);
+
+			}else if (opcciud==5){
+				cuidades* mad = new Madrid("Madrid",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						mad->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						mad->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						mad->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						mad->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						mad->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						mad->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						mad->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						mad->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(mad);
+
+			}else if(opcciud==6){
+				cuidades* man = new Manchester("Manchester",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						man->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						man->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						man->setestadios(juv);
+					}else if (opcest==4){
+						name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						man->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						man->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						man->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						man->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						man->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(man);
+
+			}else if(opcciud==7){
+				cuidades* mun = new Munich("Munich",poblacion);
+
+				for (int i = 0; i < num_estadios; ++i)
+				{
+					cout << "Que estadio desea agregar?\n1.Allianz Arena\n2.Camp Nou\n3.Juventus Stadium\n4.Old Trafford\n5.San Paolo\n6.Santiago Bernabeu\n7.Signaliduna Park\n8.Stanford Bridge";
+					cin >> opcest;
+					cout << "Capacidad del estadio: ";
+					cin >> capac;
+					cout << "Tipo de grama: ";
+					cin >> grama;
+
+					//TIPOS DE ESTADIO
+					if (opcest==1){
+						name_stadium ="Allianz Arena";
+						Estadio* allian = new AllianzArena(name_stadium,capac,grama);
+						mun->setestadios(allian);	
+					}else if (opcest==2){
+						name_stadium = "Camp Nou";
+						Estadio* cam = new Campnou(name_stadium,capac,grama);
+						mun->setestadios(cam);
+					}else if(opcest==3){
+						name_stadium = "Juventus Stadium";
+						Estadio* juv = new JuventusStadium(name_stadium,capac,grama);
+						mun->setestadios(juv);
+					}else if (opcest==4){
+							name_stadium = "OldTrafford";
+						Estadio* old = new OldTrafford(name_stadium,capac,grama);
+						mun->setestadios(old);
+					}else if (opcest==5){
+						name_stadium = "San Paolo";
+						Estadio* SanP = new SanPaolo(name_stadium,capac,grama);
+						mun->setestadios(SanP);
+					}else if (opcest==6){
+						name_stadium = "SantiagoBernabeu";
+						Estadio* Sant = new SantiagoBernabeu(name_stadium,capac,grama);
+						mun->setestadios(Sant);
+					}else if (opcest==7){
+						name_stadium = "Signaliduna Park";
+						Estadio* Signa = new SignalidunaPark(name_stadium,capac,grama);
+						mun->setestadios(Signa);
+					}else if (opcest==8){
+						name_stadium = "Stanfor Bridge";
+						Estadio* Stanford = new StanfordBridge(name_stadium,capac,grama);
+						mun->setestadios(Stanford);
+					}else{
+						cout << "opcion invalida";
+					}					
+			}
+			city.push_back(mun);
+
+
+			}else{
+				cout << "Opcion invalida";
+			}
+
+		}//fin agregar estadios
+		break;
 		
 	}//Fin Switch
+	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Salir ";
+	cin >> opc;
+
+}//FIN WHILE
 }//Fin Del Metodo Run
