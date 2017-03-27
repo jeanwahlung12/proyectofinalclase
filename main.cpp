@@ -105,11 +105,7 @@ int run(){//Metodo Run
 				//FINALIZA AGREGAR JUGADORES AL EQUIPO
 				teams.push_back(Boruss);
 
-		}//FIN DORTMUND
-	}//fin AGREGAR A DORMUND
-		break;
-
-		case 2:{
+		}else if (opcequipo==2){
 
 				equipo* barca = new barcelonafc (0);
 				for (int i = 0; i < cantjugadores; ++i)
@@ -149,11 +145,8 @@ int run(){//Metodo Run
 				}
 
 				teams.push_back(barca);
-			}
-
-		break;
-
-		case 3:{
+			
+		}else if (opcequipo==3){
 				equipo* juve = new JuventusFC(0);
 
 				for (int i = 0; i < cantjugadores; ++i)
@@ -194,9 +187,7 @@ int run(){//Metodo Run
 				teams.push_back(juve);
 
 
-		}//fin agregar juventus
-		break;
-		case 4:{
+		}else if(opcequipo==4){
 			equipo* bay = new Bayern(0);
 
 			for (int i = 0; i < cantjugadores; ++i)
@@ -235,10 +226,174 @@ int run(){//Metodo Run
 					}//FINALIZA AGREGAR JUGADORES
 				}
 				teams.push_back(bay);
+				//fin agregar munich
+		}else if (opcequipo==5){
 
-		}//Fin agregar munich
-		break;
-		
+				equipo* chels = new Chelsea(0);
+
+				for (int i = 0; i < cantjugadores; ++i)
+				{
+					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\3.Delantero\n4.Portero ";
+					cin >> opcpos;
+					cout << "Ingrese el nombre del jugador: ";
+					cin >> nombrej;
+					cout << "Ingrese la edad del jugador: ";
+					cin >> edad;
+					cout << "Pie habil del jugador: ";
+					cin >> piehabil;
+					cout << "Nacionalidad del jugador: ";
+					cin >> nacionalidad;
+					cout << "Velocidad del jugador: ";
+					cin >> velocidad;
+
+					if (opcpos==1){
+						jugador* medio = new mediocampista(nombrej,edad,piehabil,nacionalidad,velocidad);
+						chels->setjugador(medio);
+						//termina posicion medio campista.
+					}else if (opcpos==2){
+						jugador* def = new defensa(nombrej,edad,piehabil,nacionalidad,velocidad);
+						chels->setjugador(def);
+						//Termina posicion defensa
+					}else if (opcpos==3){
+						jugador* del = new delantero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						chels->setjugador(del);
+						//Termina posicion delantero
+					}else if (opcpos==4){
+						jugador* port = new portero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						chels->setjugador(port);
+						//Termina posicion arquero
+					}else{
+						cout << "Opción no disponible.";
+					}//FINALIZA AGREGAR JUGADORES
+				}
+				teams.push_back(chels);
+
+		}else if (opcequipo==6){
+
+			equipo* united = new ManU(0);
+			for (int i = 0; i < cantjugadores; ++i)
+				{
+					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\3.Delantero\n4.Portero ";
+					cin >> opcpos;
+					cout << "Ingrese el nombre del jugador: ";
+					cin >> nombrej;
+					cout << "Ingrese la edad del jugador: ";
+					cin >> edad;
+					cout << "Pie habil del jugador: ";
+					cin >> piehabil;
+					cout << "Nacionalidad del jugador: ";
+					cin >> nacionalidad;
+					cout << "Velocidad del jugador: ";
+					cin >> velocidad;
+
+					if (opcpos==1){
+						jugador* medio = new mediocampista(nombrej,edad,piehabil,nacionalidad,velocidad);
+						united->setjugador(medio);
+						//termina posicion medio campista.
+					}else if (opcpos==2){
+						jugador* def = new defensa(nombrej,edad,piehabil,nacionalidad,velocidad);
+						united->setjugador(def);
+						//Termina posicion defensa
+					}else if (opcpos==3){
+						jugador* del = new delantero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						united->setjugador(del);
+						//Termina posicion delantero
+					}else if (opcpos==4){
+						jugador* port = new portero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						united->setjugador(port);
+						//Termina posicion arquero
+					}else{
+						cout << "Opción no disponible.";
+					}//FINALIZA AGREGAR JUGADORES
+				}
+				teams.push_back(united);
+
+
+		}else if(opcequipo==7){
+			equipo* real = new RealMadridFC(0);
+
+			for (int i = 0; i < cantjugadores; ++i)
+				{
+					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\3.Delantero\n4.Portero ";
+					cin >> opcpos;
+					cout << "Ingrese el nombre del jugador: ";
+					cin >> nombrej;
+					cout << "Ingrese la edad del jugador: ";
+					cin >> edad;
+					cout << "Pie habil del jugador: ";
+					cin >> piehabil;
+					cout << "Nacionalidad del jugador: ";
+					cin >> nacionalidad;
+					cout << "Velocidad del jugador: ";
+					cin >> velocidad;
+
+					if (opcpos==1){
+						jugador* medio = new mediocampista(nombrej,edad,piehabil,nacionalidad,velocidad);
+						real->setjugador(medio);
+						//termina posicion medio campista.
+					}else if (opcpos==2){
+						jugador* def = new defensa(nombrej,edad,piehabil,nacionalidad,velocidad);
+						real->setjugador(def);
+						//Termina posicion defensa
+					}else if (opcpos==3){
+						jugador* del = new delantero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						real->setjugador(del);
+						//Termina posicion delantero
+					}else if (opcpos==4){
+						jugador* port = new portero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						real->setjugador(port);
+						//Termina posicion arquero
+					}else{
+						cout << "Opción no disponible.";
+					}//FINALIZA AGREGAR JUGADORES
+				}
+				teams.push_back(real);
+
+		}else if(opcequipo==8){
+			equipo* nap = new NapoliFC(0);
+
+			for (int i = 0; i < cantjugadores; ++i)
+				{
+					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\3.Delantero\n4.Portero ";
+					cin >> opcpos;
+					cout << "Ingrese el nombre del jugador: ";
+					cin >> nombrej;
+					cout << "Ingrese la edad del jugador: ";
+					cin >> edad;
+					cout << "Pie habil del jugador: ";
+					cin >> piehabil;
+					cout << "Nacionalidad del jugador: ";
+					cin >> nacionalidad;
+					cout << "Velocidad del jugador: ";
+					cin >> velocidad;
+
+					if (opcpos==1){
+						jugador* medio = new mediocampista(nombrej,edad,piehabil,nacionalidad,velocidad);
+						nap->setjugador(medio);
+						//termina posicion medio campista.
+					}else if (opcpos==2){
+						jugador* def = new defensa(nombrej,edad,piehabil,nacionalidad,velocidad);
+						nap->setjugador(def);
+						//Termina posicion defensa
+					}else if (opcpos==3){
+						jugador* del = new delantero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						nap->setjugador(del);
+						//Termina posicion delantero
+					}else if (opcpos==4){
+						jugador* port = new portero(nombrej,edad,piehabil,nacionalidad,velocidad,0);
+						nap->setjugador(port);
+						//Termina posicion arquero
+					}else{
+						cout << "Opción no disponible.";
+					}//FINALIZA AGREGAR JUGADORES
+				}
+				teams.push_back(nap);
+
+			}else{
+				cout << "Numero incorrecto";
+			}
+		}//fin case 1
+
 		
 	}//Fin Switch
 }//Fin Del Metodo Run
