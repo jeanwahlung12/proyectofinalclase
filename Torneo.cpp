@@ -3,9 +3,11 @@
 Torneo::Torneo(){
 
 }
-Torneo::Torneo(string name, int prem){
+Torneo::Torneo(string name, int prem, equipo* equipo1, equipo* equipo2){
 	nombre=name;
 	prem=premio;
+	team1 = equipo1;
+	team2 = equipo2;
 }
 
 void Torneo::setnombre(string name){
@@ -14,15 +16,10 @@ void Torneo::setnombre(string name){
 void Torneo::setpremio(int premi){
 	premio = premi;
 }
-void Torneo::setequipos(equipo* team){
-	equipos.push_back(team);
-}
+
 string Torneo::getnombre(){
 	return nombre;
 }
 int Torneo::getpremio(){
 	return premio;
-}
-equipo* Torneo::getequipo(int num){
-	return equipos[num];
 }

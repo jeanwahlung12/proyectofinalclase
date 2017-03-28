@@ -35,28 +35,32 @@
 #include "Chelsea.h"
 #include "JuventusFC.h"
 #include "NapoliFC.h"
+#include <typeinfo>
+#include <string>
+#include <iostream>
 using namespace std;
 // declaracion del metodo
 int run();
 
 int main(){
-	//run();
-	cout << "HOLAS!";
+
+
+	run();
+	
 	return 0;
 }
 
-/*int run(){//Metodo Run
+
+int run(){//Metodo Run
 	vector <equipo*> teams;
 	vector <cuidades*> city;
-	int opc,opcequipo,cantjugadores, opcpos, edad, velocidad, opcciud, poblacion, num_estadios, opcest, capac;
+	int opc,premio,opcequipo,cantjugadores, opcpos, edad, pos1,pos2, velocidad, opcciud, poblacion, num_estadios, opcest, capac, opctor;
 	string nombre, nombrej, piehabil, nacionalidad, grama, name_stadium;
-	cin >> nombre;
-	cout << nombre;
 	cout << "----SIMULACIÓN DE PARTIDOS----\n\n";
-	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Salir ";
+	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Agregar Torneo\n5.Salir ";
 	cin >> opc;
 
-	while (opc!=4){
+	while (opc!=5){
 
 	switch (opc){
 		case 1:{
@@ -73,7 +77,7 @@ int main(){
 				//COMIENZA AGREGAR JUGADORES AL EQUIPO
 				for (int i = 0; i < cantjugadores; ++i)
 				{
-					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\3.Delantero\n4.Portero ";
+					cout << "\n¿Que posicion es el jugador?\n1.Mediocampista\n2.Defensa\n3.Delantero\n4.Portero ";
 					cin >> opcpos;
 					cout << "Ingrese el nombre del jugador: ";
 					cin >> nombrej;
@@ -774,9 +778,53 @@ int main(){
 
 		}//fin agregar estadios
 		break;
+
+		case 4:{
+			cout << "Torneo que desea agregar: \n1.Europa League\n2.Champions League: ";
+			cin >> opctor;
+			cout << "Premio: ";
+			cin >> premio;
+			cout << "Equipos que jugaran el torneo, escoja la posición: " << endl;
+			for (int i = 0; i < teams.size(); ++i)
+			{
+				if (typeid(teams[i])==typeid(barcelonafc))
+					cout << i << " Barcelona FC"<< endl;
+				else if (typeid(teams[i])==typeid(RealMadridFC))
+					cout << i << " Real Madrid FC" << endl;
+				else if (typeid(teams[i])==typeid(NapoliFC))
+					cout << i << " Napoli" << endl;
+				else if (typeid(teams[i])==typeid(ManU))
+					cout << i << "MancherterUnited" << endl;
+				else if (typeid(teams[i])==typeid(JuventusFC))
+					cout << i << "JuventusFC" << endl;
+				else if (typeid(teams[i])==typeid(Bayern))
+					cout << i << "Bayern Munich" << endl;
+				else
+					cout << i << "Borussia Dormund FC" << endl;
+
+			}
+			cout << "Equipo 1: " ;
+			cin >> pos1;
+			cout << "Equipo 2: ";
+			cin >> pos2;
+
+			while (pos1>teams.size() || pos2>teams.size()){
+				cout << "Posiciones inexistentes, vuelva a ingresar la posicion" << endl;
+				cout << "Equipo 1: " ;
+				cin >> pos1;
+				cout << "Equipo 2: ";
+				cin >> pos2;
+			}
+			if (opctor==1){
+				Torneo* europa = new EuropaLeague("Europa League",premio, teams[pos1], teams[pos2]);
+			}else{
+				Torneo* champion = new Champions("Champions League",premio, teams[pos1], teams[pos2]);
+			}
+		}
+		break;
 		
 	}//Fin Switch
-	cout << "Bienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Salir ";
+	cout << "\n\nBienvenido! Escoja una opción, recuerde que para simular partidos necesita crear equipos primero. \n1.Agregar Equipos\n2.Agregar Ciudades\n3.Simulacion\n4.Agregar Torneo\n5.Salir  ";
 	cin >> opc;
 
 }//FIN WHILE

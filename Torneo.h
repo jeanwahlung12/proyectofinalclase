@@ -4,15 +4,14 @@ class Torneo{
 	protected:
 		string nombre;
 		int premio;
-		vector<equipo*> equipos;
+		equipo* team1;
+		equipo* team2;
 	public:
 		Torneo();
-		Torneo(string,int);
+		Torneo(string,int,equipo*,equipo*);
 		void setnombre(string);
 		void setpremio(int);
-		void setequipos(equipo*);
 		string getnombre();
 		int getpremio();
-		equipo* getequipo(int);
 
 };

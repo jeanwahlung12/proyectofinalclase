@@ -4,7 +4,7 @@ class EuropaLeague:public Torneo{
 	
 	public:
 		EuropaLeague();
-		EuropaLeague(string,int);
+		EuropaLeague(string,int,equipo*,equipo*);
 		
 
 };
